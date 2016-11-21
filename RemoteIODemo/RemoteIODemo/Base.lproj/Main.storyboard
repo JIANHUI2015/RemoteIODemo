@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3H-HD-qTy">
+                                <rect key="frame" x="0.0" y="318" width="187.5" height="30"/>
+                                <state key="normal" title="Start Record"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FTg-5U-PCw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D5-ve-Y1E">
+                                <rect key="frame" x="187.5" y="318" width="187.5" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cR0-JT-hu4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-8j-4iv">
+                                <rect key="frame" x="166" y="228" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q3H-HD-qTy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="6Pc-6H-oyE"/>
+                            <constraint firstItem="RW2-8j-4iv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6q0-u7-aPA"/>
+                            <constraint firstItem="8D5-ve-Y1E" firstAttribute="width" secondItem="Q3H-HD-qTy" secondAttribute="width" id="BLY-HK-vrZ"/>
+                            <constraint firstItem="8D5-ve-Y1E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CwY-yS-ao0"/>
+                            <constraint firstItem="Q3H-HD-qTy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Htp-IE-nK5"/>
+                            <constraint firstAttribute="trailing" secondItem="8D5-ve-Y1E" secondAttribute="trailing" id="VPr-QY-0Pe"/>
+                            <constraint firstItem="Q3H-HD-qTy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WBV-Gf-qca"/>
+                            <constraint firstItem="Q3H-HD-qTy" firstAttribute="top" secondItem="RW2-8j-4iv" secondAttribute="bottom" constant="69" id="gyX-hz-PD5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputLabel" destination="RW2-8j-4iv" id="A4m-Hs-YPi"/>
+                        <outlet property="playBtn" destination="8D5-ve-Y1E" id="rpQ-Br-cYo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+</document>
