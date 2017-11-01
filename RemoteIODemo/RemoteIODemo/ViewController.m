@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RecordTool.h"
 #import <AVFoundation/AVFoundation.h>
+#import "WavToMp3Controller.h"
 @interface ViewController ()<AVAudioPlayerDelegate>
 {
     RecordTool *recorder;
@@ -48,7 +49,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             _inputLabel.text = [[NSString alloc] initWithFormat:@"输入:%@",[s portName]];
         });
-        
     }
 }
 - (IBAction)start:(UIButton *)sender {
@@ -90,6 +90,11 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     [_playBtn setTitle:@"Start" forState:UIControlStateNormal];
     isPlaying = false;
+}
+
+- (IBAction)presentVC {
+    WavToMp3Controller *vc = [[WavToMp3Controller alloc] init];
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 
 

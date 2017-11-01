@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
+@protocol RecordToolDelegate
+- (void)gotData:(AudioBuffer)ioData;
+@end
 
 @interface RecordTool : NSObject
+@property (nonatomic, weak) id<RecordToolDelegate> delegate;
 - (void)start;
 - (void)stop;
 @end

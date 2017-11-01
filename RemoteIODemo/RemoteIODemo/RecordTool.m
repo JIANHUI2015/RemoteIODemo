@@ -7,7 +7,6 @@
 //
 
 #import "RecordTool.h"
-#import <AVFoundation/AVFoundation.h>
 #import "LameConver.h"
 
 #define kInputBus 1
@@ -38,13 +37,11 @@ static OSStatus CallBack(
                             AudioBufferList 			*ioData)
 {
     RecordTool *THIS=(__bridge RecordTool*)inRefCon;
-    
     OSStatus renderErr = AudioUnitRender(THIS->remoteIOUnit, ioActionFlags,
                                          inTimeStamp, 1, inNumberFrames, ioData);
     
-    
-//    [THIS->cover convertPcmToMp3:ioData->mBuffers[0] toPath:THIS->outPath];
-    
+    [THIS->cover convertPcmToMp3:ioData->mBuffers[0] toPath:THIS->outPath];
+    [THIS.delegate gotData:ioData->mBuffers[0]];
     return renderErr;
 }
 
@@ -76,7 +73,6 @@ static OSStatus CallBack(
     //init RemoteIO
     CheckError(NewAUGraph(&auGraph),"couldn't NewAUGraph");
     CheckError(AUGraphOpen(auGraph),"couldn't AUGraphOpen");
-    
     
     AudioComponentDescription componentDesc;
     componentDesc.componentType = kAudioUnitType_Output;
@@ -133,7 +129,7 @@ static OSStatus CallBack(
     inputProc.inputProc = CallBack;
     inputProc.inputProcRefCon = (__bridge void *)(self);
     CheckError(AUGraphSetNodeInputCallback(auGraph, remoteIONode, 0, &inputProc),"Error setting io output callback");
-    //
+
     CheckError(AUGraphInitialize(auGraph),"couldn't AUGraphInitialize" );
     CheckError(AUGraphUpdate(auGraph, NULL),"couldn't AUGraphUpdate" );
 }
@@ -143,11 +139,10 @@ static OSStatus CallBack(
     NSError *error;
     if ([fileMgr fileExistsAtPath:outPath]) {
         [fileMgr removeItemAtPath:outPath error:&error];
-        NSLog(@"删除");
+        NSLog(@"删除mp3文件");
     }
     
     CheckError(AUGraphStart(auGraph),"couldn't AUGraphStart");
-    
     CAShow(auGraph);
 }
 
@@ -158,7 +153,6 @@ static OSStatus CallBack(
 static void CheckError(OSStatus error, const char *operation)
 {
     if (error == noErr) return;
-    
     char str[20];
     // see if it appears to be a 4-char-code
     *(UInt32 *)(str + 1) = CFSwapInt32HostToBig(error);
@@ -170,8 +164,8 @@ static void CheckError(OSStatus error, const char *operation)
         sprintf(str, "%d", (int)error);
     
     fprintf(stderr, "Error: %s (%s)\n", operation, str);
-    
     exit(1);
+    
 }
 
 @end

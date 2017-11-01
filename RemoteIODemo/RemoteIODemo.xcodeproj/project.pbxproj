@@ -18,6 +18,8 @@
 		D4A60BD01DDEDF9D00476D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A60BCE1DDEDF9D00476D42 /* LaunchScreen.storyboard */; };
 		D4A60BDB1DDEDF9D00476D42 /* RemoteIODemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A60BDA1DDEDF9D00476D42 /* RemoteIODemoTests.m */; };
 		D4A60BE61DDEDF9D00476D42 /* RemoteIODemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A60BE51DDEDF9D00476D42 /* RemoteIODemoUITests.m */; };
+		D4BD6DC81FA9552500C33863 /* test_wav.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4BD6DC71FA9552500C33863 /* test_wav.wav */; };
+		D4BD6DCB1FA9556B00C33863 /* WavToMp3Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD6DCA1FA9556B00C33863 /* WavToMp3Controller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		D4A60BE11DDEDF9D00476D42 /* RemoteIODemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteIODemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A60BE51DDEDF9D00476D42 /* RemoteIODemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteIODemoUITests.m; sourceTree = "<group>"; };
 		D4A60BE71DDEDF9D00476D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4BD6DC71FA9552500C33863 /* test_wav.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = test_wav.wav; sourceTree = "<group>"; };
+		D4BD6DC91FA9556B00C33863 /* WavToMp3Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WavToMp3Controller.h; sourceTree = "<group>"; };
+		D4BD6DCA1FA9556B00C33863 /* WavToMp3Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WavToMp3Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +116,11 @@
 		D4A60BBF1DDEDF9D00476D42 /* RemoteIODemo */ = {
 			isa = PBXGroup;
 			children = (
+				D4BD6DC71FA9552500C33863 /* test_wav.wav */,
 				D48C898F1DDEEF3A0012898E /* lame.h */,
 				D48C89901DDEEF3A0012898E /* libmp3lame.a */,
+				D4BD6DC91FA9556B00C33863 /* WavToMp3Controller.h */,
+				D4BD6DCA1FA9556B00C33863 /* WavToMp3Controller.m */,
 				D48C89921DDEEF4C0012898E /* LameConver.h */,
 				D48C89931DDEEF4C0012898E /* LameConver.m */,
 				D48C898C1DDEE0990012898E /* RecordTool.h */,
@@ -266,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A60BD01DDEDF9D00476D42 /* LaunchScreen.storyboard in Resources */,
+				D4BD6DC81FA9552500C33863 /* test_wav.wav in Resources */,
 				D4A60BCD1DDEDF9D00476D42 /* Assets.xcassets in Resources */,
 				D4A60BCB1DDEDF9D00476D42 /* Main.storyboard in Resources */,
 			);
@@ -294,6 +303,7 @@
 			files = (
 				D48C898E1DDEE0990012898E /* RecordTool.m in Sources */,
 				D4A60BC81DDEDF9D00476D42 /* ViewController.m in Sources */,
+				D4BD6DCB1FA9556B00C33863 /* WavToMp3Controller.m in Sources */,
 				D48C89941DDEEF4C0012898E /* LameConver.m in Sources */,
 				D4A60BC51DDEDF9D00476D42 /* AppDelegate.m in Sources */,
 				D4A60BC21DDEDF9D00476D42 /* main.m in Sources */,
